@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TUP LC2 - TP Integrador</title>
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/pages/favorities.css" />
+    <script src="js/common.js" defer></script>
+    <script src="js/pages/favorities.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="header-top">
+            <img src="img/IconoCine.png" alt="Icono cine">
+            <h1>
+                <!--Titulo Cabecera-->
+                <span>Cartelera de Cine</span>
+            </h1>
+        </div>
+        <nav>
+            <!--Menu Superior-->
+            <ul>
+                <li><a href="index.html">Cartelera</a></li>
+                <li class="current-page"><a href="#">Mis Favoritas</a></li>
+                <li><a href="help.html">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenido principal de la página -->
+    <main>
+        <h2>Mis Peliculas Favoritas</h2>
+        <div class="loadMessage" id="spinnerDivFavoritos" style="display: none;">
+            <p>Cargando películas... Aguarde un momento</p>
+            <img src="img/Spinner-1s-200px.gif" alt="spinner GIF">
+        </div>
+        <section id="messages-fav" class="sec-messages" style="display: none;">
+            <p class="mensaje-warning mensajes" id="msjEmptyFavs" style="display: none;">No tiene películas
+                seleccionadas en sus favoritos</p>
+        </section>
+        <section id="sec-favorities-list">
+            <!--Sección contenido de peliculas favoritas-->
+            <div class="contenedorPeliculasFavoritas" id="contenedorPeliculasFavoritas">
+
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desarrollado con ♥ - LC2</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,321 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", "Geneva", Verdana, sans-serif;
+}
+
+:root {
+    /* Declaro variables CSS con colores principales */
+    --color-theme: #FFCE30;
+    --color-active: #288BA8;
+    --color-back-active: #746AB0;
+    --color-back-inactive: #c4c6c9;
+    --color-titulos: #E83845;
+    --color-texto-blanco: #FFF;
+    --color-gradient: linear-gradient(to right,
+            var(--color-theme),
+            var(--color-back-active));
+    --color-success: #28a745;
+    /*Colores para los mensajes al usuario*/
+    --color-warning: #ffc107;
+    --color-error: #dc3545;
+    --color-form-button: #1c5b45;
+    --color-paginacion: #241744;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+.mensajes {
+    width: 50%;
+    border-radius: 15px;
+    padding: 18px 30px;
+    color: var(--color-texto-blanco);
+}
+
+.mensaje-success {
+    background-color: var(--color-success);
+}
+
+.mensaje-warning {
+    background-color: var(--color-warning);
+}
+
+.mensaje-error {
+    background-color: var(--color-error);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+button,
+a {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-image: url('../img/FondoCine6.webp');
+    background-repeat: no-repeat;
+    border-radius: 0 0% 20px 20px;
+    border-bottom: 2px solid var(--color-active);
+}
+
+.header-top {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.header-top img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+nav>ul {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+}
+
+nav li {
+    flex: 0 0 auto;
+    margin: 0px 2px;
+}
+
+nav li a {
+    display: block;
+    padding: 16px 12px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    color: var(--color-texto-blanco);
+    background-color: var(--color-back-inactive);
+    border-radius: 10px 10px 0 0;
+}
+
+nav li.current-page a {
+    color: var(--color-theme);
+    background-color: var(--color-active);
+    pointer-events: none;
+}
+
+main {
+    margin-top: 120px;
+    overflow: auto;
+    padding: 16px;
+    padding-bottom: 60px;
+    height: calc(100% - 120px);
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    color: var(--color-theme);
+    text-shadow: black 3px 3px 9px;
+}
+
+h1>img {
+    width: 70px;
+    vertical-align: middle;
+    padding: 10px;
+}
+
+h2 {
+    color: var(--color-titulos);
+    margin: 16px 0;
+    text-align: center;
+    text-shadow: gray 2px 2px 5px;
+}
+
+h3 {
+    color: var(--color-theme);
+    margin: 8px 0;
+}
+
+main section {
+    display: block;
+    text-align: center;
+}
+
+.sec-messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.loadMessage {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loadMessage p {
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+.loadMessage img {
+    width: 200px;
+}
+
+.pelicula {
+    margin: 20px;
+}
+
+.pelicula p {
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.pelicula h3 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pelicula .button {
+    color: var(--color-texto-blanco);
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.desc-pelicula {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.desc-pelicula p {
+    color: var(--color-active);
+    margin: 0px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    background-color: var(--color-active);
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer p {
+    font-size: small;
+    color: var(--color-theme);
+    background-color: var(--color-active);
+}
+
+main p {
+    margin-bottom: 16px;
+}
+
+/* Media Query: Estilos a aplicar sólo en pantallas mayores a 400px */
+@media (min-width: 400px) {
+    main {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
+}
+
+.loader::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border-top: 2px solid #8900FF;
+    border-right: 2px solid transparent;
+    animation: spinner8217 0.8s linear infinite;
+}
+
+@keyframes spinner8217 {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loader-container {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.display {
+    display: none;
+}
+
+.msg {
+    width: 50%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.amarillo {
+    background-color: #ffc107;
+}
+
+.rojo {
+    background-color: #dc3545;
+}
+
+.verde {
+    background-color: #28a745;
+}
+
+/*Estilos Generales Botones Favoritos*/
+.button {
+    cursor: pointer;
+    background: #7f8c8d;
+    padding: 10px 10px;
+    text-align: center;
+    width: 200px;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    text-decoration: none;
+    box-shadow: 0px 2px 0px #373c3c;
+}
+
+.button span {
+    margin-right: 10px;
+}
+
+.button.medium {
+    width: 150px;
+}
+
+.button.radius {
+    border-radius: 50px;
+}
+
+.button:hover {
+    box-shadow: 0px 0px 0px;
+}

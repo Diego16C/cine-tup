@@ -1,0 +1,30 @@
+#sec-favorities-list {
+    display: flex;
+    justify-content: center;
+}
+
+.contenedorPeliculasFavoritas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.contenedorPeliculasFavoritas img {
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    max-width: 250px;
+}
+
+.contenedorPeliculasFavoritas .pelicula .videosFav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#messages-fav {
+    margin-top: 100px;
+}
